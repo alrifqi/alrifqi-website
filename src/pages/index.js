@@ -8,9 +8,6 @@ export default function Home() {
     <DefaultLayout>
       <div className="w-full flex flex-col items-center">
         <Jumbotron />
-        <div className="bg-white w-full">
-          Portfolio
-        </div>
       </div>
     </DefaultLayout>
   )

@@ -1,25 +1,21 @@
 import React from 'react'
-import Particles from 'react-particles-js'
+// TODO: uninstall Particles.js
+// import Particles from 'react-particles-js'
+import alrifqi from '../assets/images/alrifqi.png'
 
 export default function Jumbotron () {
   return (
-    <div className="w-full flex flex-col items-center">
-      <Particles
-        className="w-full"
-        height="70vh"
-        style={{
-          width: '100%',
-          backgroundColor: '#2D3748'
-        }}
-      />
-        <div className="w-3/4 text-left text-white absolute" style={ style.jumbotron }>
-          <div className="text-6xl font-bold">
-            My Name is Reza
-          </div>
-          <div>
-            And I am a
-          </div>
+    <div className="w-full flex flex-row justify-between items-center px-32 py-20">
+      <div className="text-left text-rock" style={ style.jumbotron }>
+        <div className="text-6xl font-hairline">
+          I'm
+          <span class="ml-2 font-semibold">Muhammad Reza Nurrifqi</span>
         </div>
+        <div class="font-thin text-3xl">
+          Software Engineer, Learner, Father.
+        </div>
+      </div>
+      <img src={alrifqi} class="w-1/4" />
     </div>
   )
 }

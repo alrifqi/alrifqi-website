@@ -3,20 +3,29 @@ import alrifqi from '../assets/images/alrifqi.png'
 
 export default function Header() {
   return (
-    <div className="border-b border-platinum flex flex-row justify-center items-center py-2 lg:px-20 md:px-20 bg-white">
-      <div className="w-3/4 flex flex-row justify-between items-center">
+    <div className="border-b border-platinum flex flex-row justify-center items-center py-2 lg:px-32 md:px-32">
+      <div className="w-full flex flex-row justify-between items-center">
         <div className="cursor-pointer">
           <img src={alrifqi} alt="Alrifqi" className="w-12 h-12 rounded-full"/>
         </div>
-        <div className="flex flex-row space-x-4 text-ecstaticdove font-thin">
+        <div className="flex flex-row space-x-4 font-light text-rock">
           <div>
             Home
           </div>
           <div>
-            About
+            Portfolio
           </div>
           <div>
-            Portfolio
+            Services
+          </div>
+          <div>
+            Skills
+          </div>
+          <div>
+            Blogs
+          </div>
+          <div>
+            Contact
           </div>
         </div>
       </div>
