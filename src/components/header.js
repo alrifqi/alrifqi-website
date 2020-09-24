@@ -1,0 +1,25 @@
+import React from 'react'
+import alrifqi from '../assets/images/alrifqi.png'
+
+export default function Header() {
+  return (
+    <div className="border-b border-platinum flex flex-row justify-center items-center py-2 lg:px-20 md:px-20 bg-white">
+      <div className="w-3/4 flex flex-row justify-between items-center">
+        <div className="cursor-pointer">
+          <img src={alrifqi} alt="Alrifqi" className="w-12 h-12 rounded-full"/>
+        </div>
+        <div className="flex flex-row space-x-4 text-ecstaticdove font-thin">
+          <div>
+            Home
+          </div>
+          <div>
+            About
+          </div>
+          <div>
+            Portfolio
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
