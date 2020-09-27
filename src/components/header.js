@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import alrifqi from '../assets/images/alrifqi.png'
 
 export default function Header() {
@@ -9,12 +10,12 @@ export default function Header() {
           <img src={alrifqi} alt="Alrifqi" className="w-12 h-12 rounded-full"/>
         </div>
         <div className="flex flex-row space-x-4 font-light text-rock">
-          <div>
+          <Link to="/">
             Home
-          </div>
-          <div>
+          </Link>
+          <Link to="/portfolio">
             Portfolio
-          </div>
+          </Link>
           <div>
             Services
           </div>

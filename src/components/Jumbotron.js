@@ -9,13 +9,13 @@ export default function Jumbotron () {
       <div className="text-left text-rock" style={ style.jumbotron }>
         <div className="text-6xl font-hairline">
           I'm
-          <span class="ml-2 font-semibold">Muhammad Reza Nurrifqi</span>
+          <span className="ml-2 font-semibold">Muhammad Reza Nurrifqi</span>
         </div>
-        <div class="font-thin text-3xl">
+        <div className="font-thin text-3xl">
           Software Engineer, Learner, Father.
         </div>
       </div>
-      <img src={alrifqi} class="w-1/4" />
+      <img src={alrifqi} className="w-1/4" />
     </div>
   )
 }

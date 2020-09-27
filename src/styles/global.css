@@ -4,10 +4,10 @@
 
 @tailwind utilities;
 
-@import url("https://use.typekit.net/xyy6zvz.css");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
 body {
-  font-family: source-sans-pro, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   background-color: #F9F9F9;
 }
