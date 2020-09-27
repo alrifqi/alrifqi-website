@@ -9,23 +9,23 @@ export default function Header() {
         <div className="cursor-pointer">
           <img src={alrifqi} alt="Alrifqi" className="w-12 h-12 rounded-full"/>
         </div>
-        <div className="flex flex-row space-x-4 font-light text-rock">
-          <Link to="/">
+        <div className="flex flex-row space-x-4 font-light text-rock text-center">
+          <Link to="/" className="hover:font-semibold cursor-pointer w-20">
             Home
           </Link>
-          <Link to="/portfolio">
+          <Link to="/portfolio" className="hover:font-semibold cursor-pointer w-20">
             Portfolio
           </Link>
-          <div>
+          <div className="hover:font-semibold cursor-pointer w-20">
             Services
           </div>
-          <div>
+          <div className="hover:font-semibold cursor-pointer w-20">
             Skills
           </div>
-          <div>
+          <div className="hover:font-semibold cursor-pointer w-20">
             Blogs
           </div>
-          <div>
+          <div className="hover:font-semibold cursor-pointer w-20">
             Contact
           </div>
         </div>
