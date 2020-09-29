@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import DefaultLayout from '../layouts/default'
 import Jumbotron from '../components/Jumbotron'
 import Card from '../components/Card'
@@ -7,12 +7,12 @@ import Card from '../components/Card'
 function generatePortfolioCards(datas) {
   const result = datas.map(({ node: data }) => {
     return (
-      <div className="w-1/3">
+      <div className="w-1/3" key={ data.id }>
         <Card
-          key={ data.id }
           img={ data.cover_image.publicURL }
           click={ goToLink }
           url={ data.url }
+          data={ data }
         >
           <div className="flex flex-col text-center mt-4">
             <span className="font-bold">{ data.name }</span>
@@ -36,8 +36,8 @@ function generateBlogCards(datas) {
   return result
 }
 
-function goToLink(link) {
-  window.open(link)
+function goToLink({ data }) {
+  navigate(`/portfolio/${data.id}`)
 }
 
 export default function Home({ data }) {

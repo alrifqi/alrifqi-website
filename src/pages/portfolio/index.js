@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function PortfolioIndex() {
+export default function PortfolioIndex(props) {
   return  (
     <div>
-      Portfolio Page
+      { props.params.id }
     </div>
   )
 }
