@@ -1,11 +1,11 @@
 import React from 'react'
-import DefaultLayout from '../../layouts/default'
+import DefaultLayout from '../../../layouts/default'
 
 export default function PortfolioIndex(props) {
   return  (
     <DefaultLayout>
       <div>
-        Portfolio
+        { props.params.id }
       </div>
     </DefaultLayout>
   )

@@ -3,6 +3,6 @@ exports.createPages = ({ actions }) => {
   createPage({
     path: `/portfolio/*`,
     matchPath: '/portfolio/:id',
-    component: require.resolve(`./src/pages/portfolio/index.js`)
+    component: require.resolve(`./src/pages/portfolio/id/index.js`)
   })
 }
