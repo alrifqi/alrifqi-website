@@ -7,7 +7,21 @@ import Card from '../components/Card'
 function generatePortfolioCards(datas) {
   const result = datas.map(({ node: data }) => {
     return (
-      <Card title={ data.name } key={ data.id } />
+      <div className="w-1/3">
+        <Card
+          key={ data.id }
+          img={ data.cover_image.publicURL }
+          click={ goToLink }
+          url={ data.url }
+        >
+          <div className="flex flex-col text-center mt-4">
+            <span className="font-bold">{ data.name }</span>
+            <span className="font-light">
+              { data.short_description }
+            </span>
+          </div>
+        </Card>
+      </div>
     )
   })
   return result
@@ -16,10 +30,14 @@ function generatePortfolioCards(datas) {
 function generateBlogCards(datas) {
   const result = datas.map(({ node: data }) => {
     return (
-      <Card title={ data.title } key={ data.id } />
+      <Card title={ data.title } key={ data.id } click={ goToLink }/>
     )
   })
   return result
+}
+
+function goToLink(link) {
+  window.open(link)
 }
 
 export default function Home({ data }) {
@@ -33,8 +51,10 @@ export default function Home({ data }) {
         <Jumbotron />
         <div className="w-full px-32">
           <span className="font-bold text-4xl">Portfolio</span>
-          <div className="flex flex-row mt-4">
-            { portfoliosCard }
+          <div className="flex flex-row mt-4 space-x-8">
+            <div className="w-full flex flex-row space-x-6">
+              { portfoliosCard }
+            </div>
           </div>
         </div>
 
@@ -57,7 +77,11 @@ export const pageQuery = graphql`
           id
           name
           url
+          short_description
           description
+          cover_image {
+            publicURL
+          }
         }
       }
     }
