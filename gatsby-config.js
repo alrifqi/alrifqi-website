@@ -4,6 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 const path = require(`path`)
+require("dotenv").config({  
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 module.exports = {
   /* Your site config here */
@@ -15,6 +18,18 @@ module.exports = {
     social: [],
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-strapi',
+      options: {
+        apiURL: process.env.API_URL || `http://localhost:1337`,
+        contentTypes: [
+          'portfolio',
+          'blog'
+        ],
+        // singleTypes: [`portfolio`],
+        queryLimit: 100,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
