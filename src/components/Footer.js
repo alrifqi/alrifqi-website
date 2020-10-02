@@ -8,6 +8,9 @@ export default function Footer() {
           <div className="text-3xl font-semibold">Just say hi.</div>
         </div>
       </div>
+      <div className="w-full text-center font-light mt-10">
+        Copyright <sup>&copy;</sup> 2020. All right reserverd.
+      </div>
     </footer>
   )
 }
