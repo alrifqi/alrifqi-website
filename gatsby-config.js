@@ -51,6 +51,12 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-apollo',
+      options: {
+        uri: process.env.API_URL || `http://localhost:1337/graphql`,
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

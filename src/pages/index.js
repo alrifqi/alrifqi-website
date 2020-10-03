@@ -30,7 +30,21 @@ function generatePortfolioCards(datas) {
 function generateBlogCards(datas) {
   const result = datas.map(({ node: data }) => {
     return (
-      <Card title={ data.title } key={ data.id } click={ goToLink }/>
+      <div className="w-1/3" key={ data.id }>
+        <Card
+          img={ data.cover_image.publicURL }
+          click={ ({ data }) => navigate(`/blog/${data.id}`) }
+          url={ data.url }
+          data={ data }
+        >
+          <div className="flex flex-col text-center mt-4">
+            <span className="font-bold">{ data.title }</span>
+            <span className="font-light">
+              { data.short_description }
+            </span>
+          </div>
+        </Card>
+      </div>
     )
   })
   return result
@@ -41,6 +55,7 @@ function goToLink({ data }) {
 }
 
 export default function Home({ data }) {
+  console.log(data)
   const { allStrapiBlog: blogs, allStrapiPortfolio: portfolios} = { ...data }
   const portfoliosCard = generatePortfolioCards(portfolios.edges)
   const blogsCard = generateBlogCards(blogs.edges)
@@ -89,7 +104,10 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          title
+          title,
+          cover_image {
+            publicURL
+          }
         }
       }
     }

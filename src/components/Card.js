@@ -8,7 +8,7 @@ export default function Card(props) {
       "
       onClick={ () => props.click(props)}
     >
-      <img src={ props.img } alt={ props.title }/>
+      <img src={ props.img } alt={ props.title } className="h-64" />
       { props.title }
       <div>
         { props.children }
