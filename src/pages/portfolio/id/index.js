@@ -2,6 +2,7 @@ import React from 'react'
 import { useQuery, gql } from '@apollo/client'
 
 import DefaultLayout from '../../../layouts/default'
+import PortfolioPage from '../../../components/PortfolioPage'
 
 const GET_PORTFOLIO_DATA = (id) => {
   const extractId = id.split("_")
@@ -10,6 +11,10 @@ const GET_PORTFOLIO_DATA = (id) => {
       portfolio(id: ${extractId[1]}) {
         name
         url
+        description
+        cover_image {
+          url
+        }
       }
     }
   `
@@ -22,11 +27,7 @@ const renderData = (data) => {
     </div>
   )
   if (data.portfolio) {
-    elem = (
-      <div>
-        { data.portfolio.name }
-      </div>
-    )
+    elem = PortfolioPage(data)
   }
   return elem
 }
@@ -36,15 +37,15 @@ export default function PortfolioIndex({ params }) {
   
   return  (
     <DefaultLayout>
-      <div>
+      <div className="px-32 mt-16">
         {
-          !loading
-          ? renderData(data)
-          : (
+          loading
+          ? (
             <div>
               loadaing
             </div>
           )
+          : renderData(data) 
         }
       </div>
     </DefaultLayout>
