@@ -6,7 +6,6 @@ export default function PortfolioPage({ portfolio: data }) {
   const techStackList = data.tech_stack.map((val) => {
     return <Badge text={ val } key={ val } />
   })
-  console.log(techStackList)
   return (
     <div className="w-full flex flex-col items-center">
       <img src={ imageUrl } className="w-4/5" />
