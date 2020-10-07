@@ -12,6 +12,7 @@ const GET_PORTFOLIO_DATA = (id) => {
         name
         url
         description
+        tech_stack
         cover_image {
           url
         }
