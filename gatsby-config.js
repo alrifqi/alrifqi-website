@@ -5,7 +5,7 @@
  */
 const path = require(`path`)
 require("dotenv").config({  
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 });
 
 module.exports = {
@@ -19,12 +19,12 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-source-strapi',
+      resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: process.env.API_URL || `http://localhost:1337`,
+        apiURL: process.env.API_URL || `http://localhost`,
         contentTypes: [
-          'portfolio',
-          'blog'
+          `portfolio`,
+          `blog`
         ],
         // singleTypes: [`portfolio`],
         queryLimit: 100,
@@ -54,7 +54,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-apollo',
       options: {
-        uri: process.env.API_URL || `http://localhost:1337/graphql`,
+        uri: `${process.env.API_URL}/graphql` || `http://localhost/graphql`,
       }
     },
     `gatsby-plugin-react-helmet`,

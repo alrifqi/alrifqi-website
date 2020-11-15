@@ -43,7 +43,7 @@ export default function PortfolioIndex({ params }) {
           loading
           ? (
             <div>
-              loadaing
+              loading
             </div>
           )
           : renderData(data) 

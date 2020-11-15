@@ -2,18 +2,18 @@ import React from 'react'
 import Badge from './Badge'
 
 export default function PortfolioPage({ portfolio: data }) {
-  const imageUrl = `http://localhost:1337${data.cover_image.url}`
+  const imageUrl = `${process.env.GATSBY_API_URL}${data.cover_image.url}`
   const techStackList = data.tech_stack.map((val) => {
     return <Badge text={ val } key={ val } />
   })
   return (
     <div className="w-full flex flex-col items-center">
-      <img src={ imageUrl } className="w-4/5" />
+      <img src={ imageUrl } className="w-4/5" alt="" />
       <div className="w-4/5 text-left text-3xl font-bold mt-10">
         { data.name }
       </div>
       <div className="w-4/5 text-left flex flex-row">
-        <a className="cursor-pointer hover:underline" href={ data.url } target="_blank">
+        <a className="cursor-pointer hover:underline" href={ data.url } target="_blank" rel="noreferrer">
           { data.url }
         </a>
       </div>

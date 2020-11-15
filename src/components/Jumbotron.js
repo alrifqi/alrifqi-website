@@ -15,7 +15,7 @@ export default function Jumbotron () {
           Software Engineer, Learner, Father.
         </div>
       </div>
-      <img src={alrifqi} className="w-1/4" />
+      <img src={alrifqi} className="w-1/4" alt="" />
     </div>
   )
 }
